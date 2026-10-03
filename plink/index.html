@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- YouTube Playables SDK: must load before any game code. -->
+<script src="https://www.youtube.com/game_api/v1"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Plink!</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="splash" class="splash" role="status" aria-live="polite">
+  <div class="logo" aria-hidden="true">
+    <svg viewBox="0 0 96 96"><rect x="10" y="30" width="76" height="58" rx="14" fill="#7b5cff"/><circle cx="30" cy="50" r="8" fill="#fff6ea"/><circle cx="48" cy="50" r="8" fill="#fff6ea"/><circle cx="66" cy="50" r="8" fill="#2ed3a0"/><circle cx="30" cy="70" r="8" fill="#ff4d6d"/><circle cx="48" cy="70" r="8" fill="#2ed3a0"/><circle cx="66" cy="70" r="8" fill="#ff4d6d"/><circle class="logo-drop" cx="48" cy="14" r="9" fill="#ff4d6d"/></svg>
+  </div>
+  <h1 class="wordmark"><span>P</span><span>l</span><span>i</span><span>n</span><span>k</span><span>!</span></h1>
+  <div class="loadbar"><div id="loadfill"></div></div>
+</div>
+
+<div id="app" class="app" hidden>
+  <section id="home" class="screen home">
+    <header class="topbar">
+      <div class="wordmark small" aria-label="Plink!"><span>P</span><span>l</span><span>i</span><span>n</span><span>k</span><span>!</span></div>
+      <button id="meBtn" class="me" type="button" aria-label="Choose your chip">
+        <span id="meChip" class="me-chip"></span>
+        <span class="me-txt"><b id="meName">Cherry</b><small id="meSub"></small></span>
+      </button>
+    </header>
+
+    <main id="content" class="content">
+      <div id="tab-play" class="tab">
+        <button id="ppCard" class="pp-card" type="button"></button>
+        <div class="list-head"><span class="list-title">Opponent ladder</span><span class="list-sub" id="ladderSub"></span></div>
+        <div id="ladder"></div>
+      </div>
+      <div id="tab-chips" class="tab" hidden>
+        <div class="list-head"><span class="list-title">Chips</span><span class="list-sub" id="chipSub"></span></div>
+        <div id="pickRow" class="pick-row"></div>
+        <div id="chipGrid" class="chip-grid"></div>
+      </div>
+      <div id="tab-stats" class="tab" hidden>
+        <div class="list-head"><span class="list-title">Stats</span></div>
+        <div id="statsBody"></div>
+      </div>
+    </main>
+
+    <nav class="nav" id="nav" aria-label="Tabs">
+      <button type="button" data-tab="play" class="on"><span class="nav-ico" data-ico="play"></span>Play</button>
+      <button type="button" data-tab="chips"><span class="nav-ico" data-ico="chips"></span>Chips<i class="dot" hidden></i></button>
+      <button type="button" data-tab="stats"><span class="nav-ico" data-ico="stats"></span>Stats</button>
+    </nav>
+  </section>
+
+  <section id="game" class="screen gamescr" hidden>
+    <header class="g-top">
+      <button id="backBtn" class="icon-btn" type="button" aria-label="Back"></button>
+      <div id="gLabel" class="g-label"></div>
+      <span class="icon-btn spacer" aria-hidden="true"></span>
+    </header>
+    <div class="players">
+      <div id="plA" class="pl"><span class="pl-ico"></span><span class="pl-txt"><b></b><small></small></span></div>
+      <div id="score" class="score">vs</div>
+      <div id="plB" class="pl right"><span class="pl-txt"><b></b><small></small></span><span class="pl-ico"></span><div id="bubble" class="bubble"></div></div>
+    </div>
+    <div id="stage" class="stage">
+      <div id="field" class="field">
+        <div id="chipLayer" class="chip-layer"></div>
+        <div id="ghost" class="ghost chip"></div>
+        <svg id="boardSvg" class="board" viewBox="0 0 740 640" aria-hidden="true"></svg>
+        <div id="cols" class="cols" role="group" aria-label="Board columns"></div>
+      </div>
+    </div>
+    <div id="status" class="status" aria-live="polite"></div>
+  </section>
+</div>
+
+<div id="fx" class="fx" aria-hidden="true"></div>
+<div id="modal" class="modal" hidden></div>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+
+<script src="game.js"></script>
+</body>
+</html>
