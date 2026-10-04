@@ -5,6 +5,7 @@ Meine Sammlung von HTML5-Mini-Spielen. Jedes Spiel liegt in einem eigenen Ordner
 | Spiel | Ordner | Beschreibung |
 |-------|--------|--------------|
 | Plink! | [`plink/`](plink/) | Vier-in-einer-Reihe mit 10 Gegnern, sammelbaren Chips und Pass & Play (YouTube Playables) |
+| Solo Stack | [`solo-stack/`](solo-stack/) | Solitär-Kartenspiel (YouTube Playables) |
 
 ## Lokal starten
 
@@ -15,7 +16,7 @@ Dann `http://localhost:8000` im Browser öffnen.
 
 ## Online spielen (GitHub Pages)
 
-Nach Aktivierung von Pages: `https://olijanz.github.io/games/` (Übersicht) bzw. `https://olijanz.github.io/games/plink/`.
+Nach Aktivierung von Pages: `https://olijanz.github.io/games/` (Übersicht) bzw. `https://olijanz.github.io/games/plink/` bzw. `.../solo-stack/`.
 
 ## Neues Spiel hinzufügen
 

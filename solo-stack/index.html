@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!-- YouTube Playables SDK: must load before any game code. -->
+<script src="https://www.youtube.com/game_api/v1"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>Solo Stack</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-table="felt">
+<div id="splash" class="splash" role="status" aria-live="polite">
+  <div class="logo" aria-hidden="true">
+    <svg viewBox="0 0 64 64"><rect class="lg-a" x="9" y="14" width="28" height="40" rx="5" transform="rotate(-12 23 34)" fill="#2f5fb3" stroke="#fff" stroke-width="2.5"/><g class="lg-b" transform="rotate(9 39 30)"><rect x="25" y="10" width="28" height="40" rx="5" fill="#fdfdfb" stroke="#cfd5cf" stroke-width="1"/><path transform="translate(30.5 21.5) scale(.17)" d="M50 5C62 25 95 40 95 62c0 14-10 22-22 22-9 0-15-4-19-10 1 10 4 17 12 22H34c8-5 11-12 12-22-4 6-10 10-19 10C15 84 5 76 5 62 5 40 38 25 50 5z" fill="#1b2230"/></g></svg>
+  </div>
+  <h1 class="wordmark">Solo Stack</h1>
+  <div class="loadbar"><div id="loadfill"></div></div>
+</div>
+
+<div id="app" class="app" hidden>
+  <header class="top">
+    <button id="menuBtn" class="ibtn" type="button" aria-label="Menu"></button>
+    <div class="deal"><b id="dealName"></b><small id="dealSub"></small></div>
+    <div class="hud">
+      <div><small data-t="score"></small><b id="hudScore">0</b></div>
+      <div><small data-t="time"></small><b id="hudTime">0:00</b></div>
+      <div><small data-t="moves"></small><b id="hudMoves">0</b></div>
+    </div>
+  </header>
+  <main id="stage" class="stage">
+    <div id="table" class="table">
+      <div id="slots" class="slots"></div>
+      <div id="cards" class="cards"></div>
+    </div>
+    <button id="finishBtn" class="finish" type="button" hidden></button>
+  </main>
+  <nav id="bar" class="bar" aria-label="Actions">
+    <button type="button" data-act="new"><span class="ico" data-ico="new"></span><span data-t="new"></span></button>
+    <button type="button" data-act="daily"><span class="ico" data-ico="daily"></span><span data-t="daily"></span><i class="dot" hidden></i></button>
+    <button type="button" data-act="hint"><span class="ico" data-ico="hint"></span><span data-t="hint"></span></button>
+    <button type="button" data-act="undo"><span class="ico" data-ico="undo"></span><span data-t="undo"></span></button>
+  </nav>
+</div>
+
+<div id="fx" class="fx" aria-hidden="true"></div>
+<div id="modal" class="modal" hidden></div>
+<div id="toasts" class="toasts" aria-live="polite"></div>
+
+<script src="game.js"></script>
+</body>
+</html>
